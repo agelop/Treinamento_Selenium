@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 public class JavaScriptExecutorTest {
@@ -16,7 +17,13 @@ public class JavaScriptExecutorTest {
 		// Seta a variavel webdriver.chrome.driver do sistema para a localização do Driver do Chrome que foi baixado
 		// Instancia o Driver do Chrome na variável driver
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\aldog\\Downloads\\chromedriver_win32\\chromedriver.exe" );
-		WebDriver driver = new ChromeDriver();
+		
+		ChromeOptions options = new ChromeOptions();
+		//options.addArguments("--incognito");
+		options.addArguments("--headless");
+
+		
+		WebDriver driver = new ChromeDriver(options);
 		
 		// Adicionando Implicit Wait de 10 segundos para toda a sessão
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

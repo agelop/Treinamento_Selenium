@@ -21,17 +21,20 @@ public class AlertsTest {
 		// Instanciando um objeto do tipo WebDriverWait para configurar Explicit Waits nos elementos
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		
-		// Navega para o Advantage Online Shopping
+		// Navega para o Pagina
 		driver.get("https://www.selenium.dev/documentation/en/webdriver/js_alerts_prompts_and_confirmations/");
 		
 		//Click the link to activate the alert
 		driver.findElement(By.linkText("See an example alert")).click();
+		
+		// Sleep 10 segundos
+	    Thread.sleep(10000);
 
 		//Wait for the alert to be displayed and store it in a variable
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 
 		// Sleep 10 segundos
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 
 		//Press the OK button
 		alert.accept();

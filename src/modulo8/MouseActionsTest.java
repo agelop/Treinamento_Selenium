@@ -18,10 +18,13 @@ public class MouseActionsTest {
 		WebDriver driver = new ChromeDriver();
 		
 		// Adicionando Implicit Wait de 10 segundos para toda a sessão
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
 		// Navega para o Advantage Online Shopping
 		driver.get("https://www.advantageonlineshopping.com/");
+		
+		// Sleep 10 segundos
+	    Thread.sleep(10000);
 		
 	    // Carrinho
 	    WebElement carrinho = driver.findElement(By.id("menuCart"));
